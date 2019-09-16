@@ -1,12 +1,14 @@
 set hidden
 
+let s:py_base = systemlist('python -m site --user-base')[0]
+
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
     \ 'c': ['clangd'],
     \ 'cpp': ['clangd'],
     \ 'go': ['gopls'],
     \ 'haskell': ['hie-wrapper'],
-    \ 'python': ['/home/user/.local/bin/pyls'],
+    \ 'python': [s:py_base.'/bin/pyls'],
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
 \ }
 
