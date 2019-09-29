@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'hashivim/vim-hashicorp-tools'
 	Plug 'junegunn/fzf.vim'
 	Plug 'luochen1990/rainbow'
+	Plug 'ncm2/float-preview'
 	Plug 'ncm2/ncm2'
 	Plug 'ncm2/ncm2-bufword'
 	Plug 'ncm2/ncm2-path'

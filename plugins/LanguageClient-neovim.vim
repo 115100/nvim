@@ -12,8 +12,10 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
 \ }
 
-let g:LanguageClient_useFloatingHover = 1
 let g:LanguageClient_useVirtualText = 0
 
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 autocmd BufWritePre *.rs :call LanguageClient#textDocument_formatting_sync()
