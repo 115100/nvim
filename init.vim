@@ -4,7 +4,6 @@ set showcmd               " show current command
 set undofile              " persistent undo
 set relativenumber        " nk, nj
 
-set background=dark " dark terminal
 set guicursor=      " https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes
 set syntax=on       " enable syntax highlighting
 

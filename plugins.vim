@@ -3,6 +3,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': './install.sh' }
 	Plug 'eagletmt/neco-ghc'
 	Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+	Plug 'haishanh/night-owl.vim'
 	Plug 'hashivim/vim-hashicorp-tools'
 	Plug 'junegunn/fzf.vim'
 	Plug 'luochen1990/rainbow'
