@@ -5,6 +5,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'hashivim/vim-hashicorp-tools'
 	Plug 'junegunn/fzf.vim'
 	Plug 'luochen1990/rainbow'
+	Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 	Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'roxma/nvim-yarp'
