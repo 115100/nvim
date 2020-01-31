@@ -10,6 +10,7 @@ let g:LanguageClient_serverCommands = {
     \ 'haskell': ['hie-wrapper'],
     \ 'python': [s:py_base.'/bin/pyls'],
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ 'terraform': ['terraform-lsp'],
 \ }
 
 let g:LanguageClient_useVirtualText = 0
