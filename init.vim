@@ -1,4 +1,5 @@
 " essential options
+set hidden
 set number                " line numbers
 set showcmd               " show current command
 set undofile              " persistent undo
