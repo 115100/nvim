@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'luochen1990/rainbow'
 	Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 	Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
+	Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'roxma/nvim-yarp'
 	Plug 'tell-k/vim-autopep8'
