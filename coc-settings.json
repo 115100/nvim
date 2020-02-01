@@ -1,4 +1,10 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "python",
+    "rust",
+    "yaml"
+  ],
   "languageserver": {
     "golang": {
       "command": "gopls",
@@ -6,10 +12,8 @@
       "filetypes": ["go"]
     }
   },
-  "coc.preferences.formatOnSaveFiletypes": [
-    "json",
-    "rust",
-    "yaml"
-  ],
+  "python.formatting.provider": "black",
+  "python.jediEnabled": false,
+  "python.pythonPath": "python3",
   "yaml.format.enable": true
 }

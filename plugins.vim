@@ -1,11 +1,11 @@
 call plug#begin('~/.local/share/nvim/plugged')
-	Plug 'ambv/black'
 	Plug 'eagletmt/neco-ghc'
 	Plug 'haishanh/night-owl.vim'
 	Plug 'hashivim/vim-hashicorp-tools'
 	Plug 'junegunn/fzf.vim'
 	Plug 'luochen1990/rainbow'
 	Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+	Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 	Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
 	Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
