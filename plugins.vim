@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'roxma/nvim-yarp'
 	Plug 'tell-k/vim-autopep8'
+	Plug 'tpope/vim-fugitive'
 	Plug 'vhda/verilog_systemverilog.vim'
 call plug#end()
 
