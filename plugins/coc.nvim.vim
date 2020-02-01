@@ -46,4 +46,4 @@ nmap <F2> <Plug>(coc-rename)
 
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-autocmd BufWritePre *.go,*.rust :OR
+autocmd BufWritePre *.go,*.rs :OR
