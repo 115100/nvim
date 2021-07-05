@@ -1,21 +1,16 @@
 call plug#begin('~/.local/share/nvim/plugged')
-	Plug 'eagletmt/neco-ghc'
 	Plug 'haishanh/night-owl.vim'
 	Plug 'hashivim/vim-hashicorp-tools'
+	Plug 'hrsh7th/nvim-compe'
 	Plug 'junegunn/fzf.vim'
 	Plug 'luochen1990/rainbow'
-	Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
-	Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-	Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-	Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
-	Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'roxma/nvim-yarp'
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'psf/black', { 'branch': 'stable' }
 	Plug 'tell-k/vim-autopep8'
-	Plug 'tpope/vim-fugitive'
-	Plug 'vhda/verilog_systemverilog.vim'
 call plug#end()
 
 for path in split(globpath("$HOME/.config/nvim/plugins", '*.vim'), "\n")
     execute 'source' fnameescape(path)
 endfor
+
+let g:black_virtualenv="/home/user/.local/share/nvim/black"
