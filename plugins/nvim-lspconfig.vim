@@ -21,9 +21,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<F2>', '<cmd> lua vim.lsp.buf.rename()<CR>',          opts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { "clangd", "gopls", "pylsp", "rls" }
+local servers = { "clangd", "gopls", "pylsp", "terraformls", "rls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -32,6 +30,14 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false,
+        underline    = true,
+        signs        = true,
+    }
+)
 
 function goimports(timeout_ms)
   local context = { source = { organizeImports = true } }
@@ -62,14 +68,6 @@ function goimports(timeout_ms)
     vim.lsp.buf.execute_command(action)
   end
 end
-
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false,
-        underline = true,
-        signs = true,
-    }
-)
 EOF
 
 autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
