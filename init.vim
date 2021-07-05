@@ -19,10 +19,9 @@ set smartcase
 
 " expand tabs for silly languages
 autocmd FileType ada,bzl,cabal,groovy,haskell,python,yaml setlocal expandtab
-" fix stupid indentation problems with yaml
-autocmd FileType yaml,yml,tf setlocal ts=2 sts=2 sw=2 indentkeys-=0# indentkeys-=<:>
+" fix stupid indentation problems with bazel/yaml
 autocmd FileType bazel setlocal ts=4 sts=4 sw=4 indentkeys-=<:>
-autocmd Filetype ada setlocal ts=8 sts=8 sw=8
+autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 indentkeys-=0# indentkeys-=<:>
 
 execute 'source' $HOME."/.config/nvim/plugins.vim"
 execute 'source' $HOME."/.config/nvim/remaps.vim"
