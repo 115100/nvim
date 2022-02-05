@@ -72,4 +72,4 @@ EOF
 
 autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
 autocmd BufWritePre *.go lua goimports(1000)
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+autocmd CursorHold * lua vim.diagnostic.open_float(0, {scope="line"})
