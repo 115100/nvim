@@ -21,16 +21,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<F2>', '<cmd> lua vim.lsp.buf.rename()<CR>',          opts)
 end
 
-local servers = { "clangd", "gopls", "pylsp", "terraformls", "rls" }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
-
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
         virtual_text = false,
