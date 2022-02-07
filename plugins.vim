@@ -2,6 +2,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'haishanh/night-owl.vim'
 	Plug 'hashivim/vim-hashicorp-tools'
 	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/nvim-cmp'
 	Plug 'hrsh7th/vim-vsnip'
 	Plug 'junegunn/fzf.vim'
