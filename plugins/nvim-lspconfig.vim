@@ -75,3 +75,4 @@ EOF
 
 autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
 autocmd BufWritePre *.go lua goimports(1000)
+autocmd BufWritePre *.py,*.pyi Black
