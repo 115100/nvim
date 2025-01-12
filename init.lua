@@ -1,21 +1,21 @@
 -- essential options
-vim.opt.hidden = true
-vim.opt.number = true         -- line numbers
-vim.opt.showcmd = true        -- show current command
-vim.opt.undofile = true       -- persistent undo
-vim.opt.relativenumber = true -- nk, nj
-vim.opt.completeopt = { 'menuone', 'noselect' }
+vim.o.hidden = true
+vim.o.number = true         -- line numbers
+vim.o.showcmd = true        -- show current command
+vim.o.undofile = true       -- persistent undo
+vim.o.relativenumber = true -- nk, nj
+vim.o.completeopt = "menuone,noselect"
 
-vim.opt.mouse = ''
-vim.opt.syntax = 'on'  -- enable syntax highlighting
+vim.o.mouse = ''
+vim.o.syntax = 'on' -- enable syntax highlighting
 
-vim.opt.colorcolumn = '80'
-vim.opt.scrolloff = 5
-vim.opt.updatetime = 300
+vim.o.colorcolumn = '80'
+vim.o.scrolloff = 5
+vim.o.updatetime = 300
 
 -- search options
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 vim.cmd("colorscheme elflord")
 
