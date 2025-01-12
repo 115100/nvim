@@ -6,7 +6,6 @@ vim.opt.undofile = true       -- persistent undo
 vim.opt.relativenumber = true -- nk, nj
 vim.opt.completeopt = { 'menuone', 'noselect' }
 
-vim.opt.guicursor = '' -- https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes
 vim.opt.mouse = ''
 vim.opt.syntax = 'on'  -- enable syntax highlighting
 
