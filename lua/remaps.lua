@@ -1,6 +1,4 @@
-local short_codes = { 'n', 'v', 'o' }
-
-for _, v in pairs(short_codes) do
+for _, v in pairs({ 'n', 'v', 'o' }) do
 	vim.api.nvim_set_keymap(v, "<Up>", '', { noremap = true })
 	vim.api.nvim_set_keymap(v, "<Down>", '', { noremap = true })
 	vim.api.nvim_set_keymap(v, "<Left>", '', { noremap = true })
