@@ -2,6 +2,7 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
+Plug('HiPhish/rainbow-delimiters.nvim')
 Plug('haishanh/night-owl.vim')
 Plug('hashivim/vim-hashicorp-tools')
 Plug('hrsh7th/cmp-cmdline')
@@ -12,7 +13,6 @@ Plug('hrsh7th/nvim-cmp')
 Plug('hrsh7th/vim-vsnip')
 Plug('junegunn/fzf')
 Plug('junegunn/fzf.vim')
-Plug('luochen1990/rainbow')
 Plug('neovim/nvim-lspconfig')
 Plug('tell-k/vim-autopep8')
 
