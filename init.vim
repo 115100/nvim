@@ -7,6 +7,7 @@ set relativenumber        " nk, nj
 set completeopt=menuone,noselect
 
 set guicursor=      " https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes
+set mouse=
 set syntax=on       " enable syntax highlighting
 
 set colorcolumn=80
