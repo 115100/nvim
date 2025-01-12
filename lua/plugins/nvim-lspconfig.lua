@@ -78,8 +78,12 @@ require 'lspconfig'.lua_ls.setup {
 	}
 }
 
-vim.api.nvim_create_autocmd({ 'BufWritePre' },
-	{ pattern = { '*.lua', '*.py', '*.pyi' }, callback = function() vim.lsp.buf.format({ async = false }) end })
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+	pattern = { '*.lua', '*.py', '*.pyi', '*.tf', '*.tfvars' },
+	callback = function()
+		vim.lsp.buf.format({ async = false })
+	end,
+})
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 	pattern = { '*.go' },
 	callback = function()

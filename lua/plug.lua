@@ -3,7 +3,6 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 Plug('HiPhish/rainbow-delimiters.nvim')
-Plug('hashivim/vim-hashicorp-tools')
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-path')
