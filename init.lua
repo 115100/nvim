@@ -18,6 +18,8 @@ vim.opt.updatetime = 300
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.cmd("colorscheme elflord")
+
 -- expand tabs for silly languages
 vim.api.nvim_create_autocmd({ 'FileType' },
 	{ pattern = { 'ada', 'bzl', 'cabal', 'groovy', 'haskell', 'python', 'yaml' }, command = 'setlocal expandtab' })
@@ -26,5 +28,6 @@ vim.api.nvim_create_autocmd({ 'FileType' },
 	{ pattern = { 'bazel' }, command = 'setlocal ts=4 sts=4 sw=4 indentkeys-=<:>' })
 vim.api.nvim_create_autocmd({ 'FileType' },
 	{ pattern = { 'yaml', 'yml' }, command = 'setlocal ts=2 sts=2 sw=2 indentkeys-=0# indentkeys-=<:>' })
+
 require('plug')
 require('remaps')
