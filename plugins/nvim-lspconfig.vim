@@ -73,5 +73,5 @@ function goimports(timeout_ms)
 end
 EOF
 
-autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.lua vim.lsp.buf.format()
 autocmd BufWritePre *.go lua goimports(1000)
