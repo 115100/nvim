@@ -18,4 +18,4 @@ Plug('tell-k/vim-autopep8')
 
 vim.call('plug#end')
 
-require('plugins/fzf')
+require('plugins')
