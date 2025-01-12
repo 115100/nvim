@@ -43,6 +43,8 @@ for _, lsp in ipairs(servers) do
 end
 
 require 'lspconfig'.lua_ls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
 	on_init = function(client)
 		if client.workspace_folders then
 			local path = client.workspace_folders[1].name
