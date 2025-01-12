@@ -20,13 +20,27 @@ vim.o.smartcase = true
 vim.cmd("colorscheme elflord")
 
 -- expand tabs for silly languages
-vim.api.nvim_create_autocmd({ 'FileType' },
-	{ pattern = { 'ada', 'bzl', 'cabal', 'groovy', 'haskell', 'python', 'yaml' }, command = 'setlocal expandtab' })
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+	pattern = { 'ada', 'bzl', 'cabal', 'groovy', 'haskell', 'python', 'yaml' },
+	callback = function()
+		vim.bo.expandtab = true
+	end
+})
 -- fix stupid indentation problems with bazel/yaml
-vim.api.nvim_create_autocmd({ 'FileType' },
-	{ pattern = { 'bazel' }, command = 'setlocal ts=4 sts=4 sw=4 indentkeys-=<:>' })
-vim.api.nvim_create_autocmd({ 'FileType' },
-	{ pattern = { 'yaml', 'yml' }, command = 'setlocal ts=2 sts=2 sw=2 indentkeys-=0# indentkeys-=<:>' })
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+	pattern = { 'bazel' },
+	callback = function()
+		vim.bo.ts = 4
+		vim.bo.sts = 4
+	end
+})
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+	pattern = { 'yaml', 'yml' },
+	callback = function()
+		vim.bo.ts = 2
+		vim.bo.sts = 2
+	end
+})
 
 require('plug')
 require('remaps')
