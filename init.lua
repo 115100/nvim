@@ -27,5 +27,5 @@ vim.api.nvim_create_autocmd({ 'FileType' },
 vim.api.nvim_create_autocmd({ 'FileType' },
 	{ pattern = { 'yaml', 'yml' }, command = 'setlocal ts=2 sts=2 sw=2 indentkeys-=0# indentkeys-=<:>' })
 require('plugins')
+require('remaps')
 vim.cmd("execute 'source' $HOME.\"/.config/nvim/plugins.vim\"")
-vim.cmd("execute 'source' $HOME.\"/.config/nvim/remaps.vim\"")
