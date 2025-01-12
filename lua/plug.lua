@@ -2,6 +2,11 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
+Plug('nvim-treesitter/nvim-treesitter', {
+	['do'] = function()
+		vim.cmd(':TSUpdate')
+	end
+})
 Plug('HiPhish/rainbow-delimiters.nvim')
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/cmp-nvim-lsp')
