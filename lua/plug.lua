@@ -12,7 +12,6 @@ Plug('hrsh7th/nvim-cmp')
 Plug('junegunn/fzf')
 Plug('junegunn/fzf.vim')
 Plug('neovim/nvim-lspconfig')
-Plug('tell-k/vim-autopep8')
 
 vim.call('plug#end')
 
