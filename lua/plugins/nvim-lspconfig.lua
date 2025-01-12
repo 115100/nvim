@@ -22,6 +22,30 @@ for _, lsp in ipairs(servers) do
 	}
 end
 
+require 'lspconfig'.pylsp.setup {
+	settings = {
+		pylsp = {
+			plugins = {
+				autopep8 = {
+					enabled = false
+				},
+				mccabe = {
+					enabled = false
+				},
+				pycodestyle = {
+					enabled = false
+				},
+				pyflakes = {
+					enabled = false
+				},
+				yapf = {
+					enabled = false
+				},
+			}
+		}
+	}
+}
+
 require 'lspconfig'.lua_ls.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
