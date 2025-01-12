@@ -23,6 +23,8 @@ for _, lsp in ipairs(servers) do
 end
 
 require 'lspconfig'.pylsp.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
 	settings = {
 		pylsp = {
 			plugins = {
