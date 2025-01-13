@@ -17,6 +17,7 @@ Plug('hrsh7th/vim-vsnip')
 Plug('junegunn/fzf')
 Plug('junegunn/fzf.vim')
 Plug('neovim/nvim-lspconfig')
+Plug('oxfist/night-owl.nvim')
 
 vim.call('plug#end')
 

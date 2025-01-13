@@ -17,8 +17,6 @@ vim.o.updatetime = 300
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-vim.cmd.colorscheme('elflord')
-
 -- expand tabs for silly languages
 vim.api.nvim_create_autocmd({ 'FileType' }, {
 	pattern = { 'ada', 'bzl', 'cabal', 'groovy', 'haskell', 'python', 'yaml' },
