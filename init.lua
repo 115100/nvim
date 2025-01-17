@@ -17,6 +17,9 @@ vim.o.updatetime = 300
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Reenable swapfile prompt when the swapfile is owned by a running Nvim process
+vim.api.nvim_clear_autocmds({ group = 'nvim_swapfile' })
+
 -- expand tabs for silly languages
 vim.api.nvim_create_autocmd({ 'FileType' }, {
 	pattern = { 'ada', 'bzl', 'cabal', 'groovy', 'haskell', 'python', 'yaml' },
