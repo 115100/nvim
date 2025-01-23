@@ -16,6 +16,7 @@ Plug('hrsh7th/nvim-cmp')
 Plug('hrsh7th/vim-vsnip')
 Plug('junegunn/fzf')
 Plug('junegunn/fzf.vim')
+Plug('mbbill/undotree')
 Plug('neovim/nvim-lspconfig')
 Plug('oxfist/night-owl.nvim')
 
