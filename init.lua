@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 	end
 })
 vim.api.nvim_create_autocmd({ 'FileType' }, {
-	pattern = { 'yaml', 'yml' },
+	pattern = { 'tf', 'yaml', 'yml' },
 	callback = function()
 		vim.bo.ts = 2
 		vim.bo.sts = 2
