@@ -1,3 +1,5 @@
+require 'os'
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
@@ -22,6 +24,28 @@ for _, lsp in ipairs(servers) do
 	}
 end
 
+local function exists(file)
+	local ok, err, code = os.rename(file, file)
+	if not ok then
+		if code == 13 then
+			-- Permission denied, but it exists
+			return true
+		end
+	end
+	return ok, err
+end
+
+--- Check if a directory exists in this path
+local function isdir(path)
+	-- "/" works on both Unix and Windows
+	return exists(path .. "/")
+end
+
+local jedi_environment
+if isdir(".venv") then
+	jedi_environment = ".venv"
+end
+
 require 'lspconfig'.pylsp.setup {
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -30,6 +54,10 @@ require 'lspconfig'.pylsp.setup {
 			plugins = {
 				autopep8 = {
 					enabled = false
+				},
+				jedi = {
+					enabled = true,
+					environment = jedi_environment,
 				},
 				mccabe = {
 					enabled = false
