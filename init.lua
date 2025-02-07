@@ -20,21 +20,6 @@ vim.o.smartcase = true
 -- Reenable swapfile prompt when the swapfile is owned by a running Nvim process
 vim.api.nvim_clear_autocmds({ group = 'nvim_swapfile' })
 
--- expand tabs for silly languages
-vim.api.nvim_create_autocmd({ 'FileType' }, {
-	pattern = { 'ada', 'bzl', 'cabal', 'groovy', 'haskell', 'python' },
-	callback = function()
-		vim.bo.expandtab = true
-	end
-})
--- fix stupid indentation problems with bazel/yaml
-vim.api.nvim_create_autocmd({ 'FileType' }, {
-	pattern = { 'bazel' },
-	callback = function()
-		vim.bo.ts = 4
-		vim.bo.sts = 4
-	end
-})
 vim.api.nvim_create_autocmd({ 'FileType' }, {
 	pattern = { 'tf', 'yaml', 'yml' },
 	callback = function()
