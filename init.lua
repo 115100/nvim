@@ -22,7 +22,7 @@ vim.api.nvim_clear_autocmds({ group = 'nvim_swapfile' })
 
 -- expand tabs for silly languages
 vim.api.nvim_create_autocmd({ 'FileType' }, {
-	pattern = { 'ada', 'bzl', 'cabal', 'groovy', 'haskell', 'python', 'yaml' },
+	pattern = { 'ada', 'bzl', 'cabal', 'groovy', 'haskell', 'python' },
 	callback = function()
 		vim.bo.expandtab = true
 	end
@@ -38,8 +38,9 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 vim.api.nvim_create_autocmd({ 'FileType' }, {
 	pattern = { 'tf', 'yaml', 'yml' },
 	callback = function()
-		vim.bo.ts = 2
+		vim.bo.expandtab = true
 		vim.bo.sts = 2
+		vim.bo.shiftwidth = 2
 	end
 })
 
