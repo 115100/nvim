@@ -21,7 +21,7 @@ vim.o.smartcase = true
 vim.api.nvim_clear_autocmds({ group = 'nvim_swapfile' })
 
 vim.api.nvim_create_autocmd({ 'FileType' }, {
-	pattern = { 'tf', 'yaml', 'yml' },
+	pattern = { 'hcl', 'terraform', 'yaml', 'yml' },
 	callback = function()
 		vim.bo.expandtab = true
 		vim.bo.sts = 2
