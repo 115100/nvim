@@ -18,6 +18,8 @@ Plug('junegunn/fzf')
 Plug('junegunn/fzf.vim')
 Plug('mbbill/undotree')
 Plug('neovim/nvim-lspconfig')
+Plug('nvim-tree/nvim-tree.lua')
+Plug('nvim-tree/nvim-web-devicons')
 Plug('oxfist/night-owl.nvim')
 
 vim.call('plug#end')

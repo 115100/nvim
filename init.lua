@@ -39,5 +39,8 @@ if vim.version.ge(vim.version(), '0.11.0') then
 	vim.diagnostic.config({ virtual_text = true })
 end
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 require('plug')
 require('remaps')
