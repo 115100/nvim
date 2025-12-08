@@ -10,7 +10,7 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
 	vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-	vim.api.nvim_buf_set_keymap(bufnr, 'n', '<F2>', '<cmd> lua vim.lsp.buf.rename()<CR>', opts)
+	vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { noremap = true, silent = true, buffer = bufnr })
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
