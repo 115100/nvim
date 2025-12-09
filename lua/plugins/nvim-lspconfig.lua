@@ -1,27 +1,8 @@
 require 'os'
 
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap = true, silent = true }
-
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(_, bufnr)
-	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-	vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-	vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { noremap = true, silent = true, buffer = bufnr })
-end
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local servers = { 'clangd', 'gopls', 'terraformls', 'rls', 'ruff' }
 for _, lsp in ipairs(servers) do
-	require('lspconfig')[lsp].setup {
-		on_attach = on_attach,
-		capabilities = capabilities,
-	}
+	vim.lsp.enable(lsp)
 end
 
 local function exists(file)
@@ -35,20 +16,11 @@ local function exists(file)
 	return ok, err
 end
 
---- Check if a directory exists in this path
-local function isdir(path)
-	-- "/" works on both Unix and Windows
-	return exists(path .. "/")
-end
-
 local jedi_environment
-if isdir(".venv") then
+if exists(".venv" .. "/") then
 	jedi_environment = ".venv"
 end
-
-require 'lspconfig'.pylsp.setup {
-	on_attach = on_attach,
-	capabilities = capabilities,
+vim.lsp.config['pylsp'] = {
 	settings = {
 		pylsp = {
 			plugins = {
@@ -75,42 +47,20 @@ require 'lspconfig'.pylsp.setup {
 		}
 	}
 }
+vim.lsp.enable('pylsp')
 
-require 'lspconfig'.lua_ls.setup {
-	on_attach = on_attach,
-	capabilities = capabilities,
-	on_init = function(client)
-		if client.workspace_folders then
-			local path = client.workspace_folders[1].name
-			if vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc') then
-				return
-			end
-		end
-
-		client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-			runtime = {
-				-- Tell the language server which version of Lua you're using
-				-- (most likely LuaJIT in the case of Neovim)
-				version = 'LuaJIT'
-			},
-			-- Make the server aware of Neovim runtime files
+vim.lsp.config['lua_ls'] = {
+	settings = {
+		Lua = {
+			runtime = { version = 'LuaJIT' },
 			workspace = {
 				checkThirdParty = false,
-				library = {
-					vim.env.VIMRUNTIME
-					-- Depending on the usage, you might want to add additional paths here.
-					-- "${3rd}/luv/library"
-					-- "${3rd}/busted/library",
-				}
-				-- or pull in all of 'runtimepath'. NOTE: this is a lot slower and will cause issues when working on your own configuration (see https://github.com/neovim/nvim-lspconfig/issues/3189)
-				-- library = vim.api.nvim_get_runtime_file("", true)
-			}
-		})
-	end,
-	settings = {
-		Lua = {}
+				library = { vim.env.VIMRUNTIME }
+			},
+		}
 	}
 }
+vim.lsp.enable('lua_ls')
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 	pattern = { '*.lua', '*.py', '*.pyi', '*.tf', '*.tfvars' },
