@@ -5,6 +5,7 @@ vim.o.showcmd = true        -- show current command
 vim.o.undofile = true       -- persistent undo
 vim.o.relativenumber = true -- nk, nj
 vim.o.completeopt = "menuone,noselect"
+vim.o.winborder = "rounded"
 
 vim.o.mouse = ''
 vim.o.syntax = 'on' -- enable syntax highlighting
