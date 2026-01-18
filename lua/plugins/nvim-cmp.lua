@@ -18,17 +18,17 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
-		['<CR>'] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				if luasnip.expandable() then
-					luasnip.expand()
+		['<CR>'] = cmp.mapping({
+			i = function(fallback)
+				if cmp.visible() and cmp.get_active_entry() then
+					cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
 				else
-					cmp.confirm({ select = true })
+					fallback()
 				end
-			else
-				fallback()
-			end
-		end),
+			end,
+			s = cmp.mapping.confirm({ select = true }),
+			c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
+		}),
 
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
