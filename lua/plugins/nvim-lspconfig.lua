@@ -1,5 +1,7 @@
 require 'os'
 
+vim.keymap.set('n', '<F2>', vim.lsp.buf.rename)
+
 local servers = { 'clangd', 'gopls', 'terraformls', 'rls', 'ruff' }
 for _, lsp in ipairs(servers) do
 	vim.lsp.enable(lsp)
