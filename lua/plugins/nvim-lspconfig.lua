@@ -2,11 +2,6 @@ require 'os'
 
 vim.keymap.set('n', '<F2>', vim.lsp.buf.rename)
 
-local servers = { 'clangd', 'gopls', 'terraformls', 'rls', 'ruff' }
-for _, lsp in ipairs(servers) do
-	vim.lsp.enable(lsp)
-end
-
 local function exists(file)
 	local ok, err, code = os.rename(file, file)
 	if not ok then
@@ -49,7 +44,6 @@ vim.lsp.config['pylsp'] = {
 		}
 	}
 }
-vim.lsp.enable('pylsp')
 
 vim.lsp.config['lua_ls'] = {
 	settings = {
@@ -62,7 +56,11 @@ vim.lsp.config['lua_ls'] = {
 		}
 	}
 }
-vim.lsp.enable('lua_ls')
+
+local servers = { 'clangd', 'gopls', 'lua_ls', 'pylsp', 'terraformls', 'rls', 'ruff', 'starpls' }
+for _, lsp in ipairs(servers) do
+	vim.lsp.enable(lsp)
+end
 
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 	pattern = { '*.lua', '*.py', '*.pyi', '*.tf', '*.tfvars' },
