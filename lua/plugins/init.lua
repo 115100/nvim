@@ -1,6 +1,7 @@
+require('plugins/blink')
 require('plugins/fzf')
+require('plugins/luasnip')
 require('plugins/night-owl')
-require('plugins/nvim-cmp')
 require('plugins/nvim-lspconfig')
 require('plugins/nvim-tree')
 require('plugins/undotree')
