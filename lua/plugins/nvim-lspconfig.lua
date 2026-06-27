@@ -1,6 +1,8 @@
 require 'os'
 
 vim.keymap.set('n', '<F2>', vim.lsp.buf.rename)
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 
 local function exists(file)
 	local ok, err, code = os.rename(file, file)
