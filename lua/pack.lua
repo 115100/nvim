@@ -22,6 +22,7 @@ if vim.version.ge(vim.version(), '0.12.0') then
 		'https://github.com/nvim-tree/nvim-tree.lua',
 		'https://github.com/nvim-tree/nvim-web-devicons',
 		'https://github.com/oxfist/night-owl.nvim',
+		'https://github.com/rachartier/tiny-inline-diagnostic.nvim',
 		'https://github.com/rafamadriz/friendly-snippets',
 		'https://github.com/romus204/tree-sitter-manager.nvim',
 		{
@@ -43,6 +44,7 @@ else
 	Plug('nvim-tree/nvim-tree.lua')
 	Plug('nvim-tree/nvim-web-devicons')
 	Plug('oxfist/night-owl.nvim')
+	Plug('rachartier/tiny-inline-diagnostic.nvim')
 	Plug('rafamadriz/friendly-snippets')
 	Plug('romus204/tree-sitter-manager.nvim')
 	Plug('saghen/blink.cmp', { tag = 'v1.*' })

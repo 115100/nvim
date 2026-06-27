@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 })
 
 if vim.version.ge(vim.version(), '0.11.0') then
-	vim.diagnostic.config({ virtual_text = true })
+	vim.diagnostic.config({ virtual_text = false })
 end
 
 vim.g.loaded_netrw = 1
