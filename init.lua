@@ -7,7 +7,7 @@ vim.o.relativenumber = true -- nk, nj
 vim.o.completeopt = "menuone,noselect"
 vim.o.winborder = "rounded"
 
-vim.o.mouse = ''
+vim.o.mouse = 'nv'
 vim.o.syntax = 'on' -- enable syntax highlighting
 
 vim.o.colorcolumn = '80'
