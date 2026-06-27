@@ -2,10 +2,6 @@ if vim.version.ge(vim.version(), '0.12.0') then
 	vim.api.nvim_create_autocmd('PackChanged', {
 		callback = function(ev)
 			local name, kind = ev.data.spec.name, ev.data.kind
-			if name == 'nvim-treesitter' and kind == 'update' then
-				if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
-				vim.cmd('TSUpdate')
-			end
 			if name == 'LuaSnip' and kind == 'update' then
 				if not ev.data.active then vim.cmd.packadd('LuaSnip') end
 				vim.system({ 'make', 'install_jsregexp' }, { cwd = ev.data.path })
@@ -25,9 +21,9 @@ if vim.version.ge(vim.version(), '0.12.0') then
 		'https://github.com/neovim/nvim-lspconfig',
 		'https://github.com/nvim-tree/nvim-tree.lua',
 		'https://github.com/nvim-tree/nvim-web-devicons',
-		'https://github.com/nvim-treesitter/nvim-treesitter',
 		'https://github.com/oxfist/night-owl.nvim',
 		'https://github.com/rafamadriz/friendly-snippets',
+		'https://github.com/romus204/tree-sitter-manager.nvim',
 		{
 			src = 'https://github.com/saghen/blink.cmp',
 			version = vim.version.range("1.x"),
@@ -46,13 +42,9 @@ else
 	Plug('neovim/nvim-lspconfig')
 	Plug('nvim-tree/nvim-tree.lua')
 	Plug('nvim-tree/nvim-web-devicons')
-	Plug('nvim-treesitter/nvim-treesitter', {
-		['do'] = function()
-			vim.cmd(':TSUpdate')
-		end
-	})
 	Plug('oxfist/night-owl.nvim')
 	Plug('rafamadriz/friendly-snippets')
+	Plug('romus204/tree-sitter-manager.nvim')
 	Plug('saghen/blink.cmp', { tag = 'v1.*' })
 
 	vim.call('plug#end')

@@ -34,10 +34,6 @@
       "rev": "8e8be709c9a93e1ebefde7964884a8b564bfd3e0",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
-    "nvim-treesitter": {
-      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
-    },
     "nvim-web-devicons": {
       "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
@@ -45,6 +41,10 @@
     "rainbow-delimiters.nvim": {
       "rev": "a798325b7f36acc62741d1029930a7b96d4dd4bf",
       "src": "https://github.com/HiPhish/rainbow-delimiters.nvim"
+    },
+    "tree-sitter-manager.nvim": {
+      "rev": "ae305699da5e97b6cffdd5cc6f6045b1b0bd26ea",
+      "src": "https://github.com/romus204/tree-sitter-manager.nvim"
     },
     "undotree": {
       "rev": "6fa6b57cda8459e1e4b2ca34df702f55242f4e4d",
